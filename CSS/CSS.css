@@ -1,8 +1,18 @@
 *{
-    max-width: 1300px;
-    margin: auto;
-}
-
-p {
 
 }
+
+.page{
+    width: 1200px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
