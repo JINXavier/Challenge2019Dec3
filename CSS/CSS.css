@@ -1,24 +1,8 @@
-body{
-
-}
-
-.page{
+*{
     max-width: 1300px;
     margin: auto;
 }
 
-.navbar {
-    position: fixed;
-    top: 0px;
-    width: 20000px;
-}
+p {
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
 }
