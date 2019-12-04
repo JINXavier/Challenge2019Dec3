@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepagina</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <style>
     /*BODY*/
@@ -51,6 +52,27 @@
     <li><a href="#contact">Inloggen</a></li>
 </ul>
 
+<!--REGISTRATIE-->
+<div class="containter">
+    <div class="login-box">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Registreren</h2>
+            <form action="registreren.php" method="post">
+                <div class="form-group"><!--GEBRUIKERSNAAM-->
+                    <label>Gebruikersnaam</label>
+                    <input type="text" name="user" class="form-control" required>
+                </div>
+                <div class="form-group"><!--WACHTWOORD-->
+                    <label>Wachtwoord</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registreren</button><!--LOGIN-->
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 <!--FOOTER-->
 </body>
 </html>
