@@ -24,7 +24,11 @@ body{
     padding: 30px;
 }
 
-login-right{
+.login-right{
     background: 30px;
     padding:30px;
+}
+
+.form-control {
+    background-color: transparent !important;
 }
