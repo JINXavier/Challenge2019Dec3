@@ -8,81 +8,22 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
     <meta charset="UTF-8">
     <title>Homepagina</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/CSS.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <style>
-    *{
-        margin: 0px;
-    }
-    .page{
-        width: 1200px;
-        margin: auto;
-        background: white;
-        padding: 10px;
-    }
-    .footer {
-        position: static;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding: 15px;
-        background-color: black;
-        color: white;
-        text-align: center;
-    }
-    .banner{
-        width: 100%;
-        height: 420px;
-    }
-    .bestemmingen{
-        width: 25%;
-        margin: auto;
-        float: left;
 
-    }
-    /*NAVBAR*/
-    ul {
-        list-style-type: none;
-        margin-top: -5px;
-        padding: 0;
-        overflow: hidden;
-        background-color: #000000;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        width: 100%;
-    }
-
-    li {
-        float: left;
-    }
-
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover {
-        background-color: #111;
-    }
-
-    .active {
-        background-color: #4CAF50;
-    }
 </style>
 <body>
 <!--NAVBAR-->
 <img class="banner" src="../IMG/Banner.png" alt="South Africa">
 <ul>
     <li><a href="../Homepage.html">Home</a></li>
-    <li><a class="active" href="PHP/index.php">Bestemmingen</a></li>
+    <li><a class="active" href="index.php">Bestemmingen</a></li>
     <li><a href="../Contact.html">Contact</a></li>
-    <li><a href="#contact">Registreer</a></li>
-    <li><a href="#contact">Inloggen</a></li>
+    <li><a href="../PHP2/registratie.php">Registreer</a></li>
+    <li><a href="../PHP1/inlog.php">Inloggen</a></li>
 </ul>
 <div class="page"> <!--Center page opening-->
 
