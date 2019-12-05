@@ -7,21 +7,45 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
 <head>
     <meta charset="UTF-8">
     <title>Homepagina</title>
-    <link rel="stylesheet" href="../CSS/CSS.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <style>
-
+    *{
+        margin: 0px;
+    }
+    .page{
+        width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    .banner{
+        width: 100%;
+        height: 420px;
+    }
     /*NAVBAR*/
     ul {
         list-style-type: none;
-        margin: 0;
+        margin-top: -5px;
         padding: 0;
         overflow: hidden;
         background-color: #000000;
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0;
-        width: 1890px;
+        width: 100%;
     }
 
     li {
@@ -46,10 +70,10 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
 </style>
 <body>
 <!--NAVBAR-->
-<img src="../IMG/Banner.png" alt="South Africa" STYLE=" TOP:0px; LEFT:0px; WIDTH:1890px; HEIGHT:420px">
+<img class="banner" src="../IMG/Banner.png" alt="South Africa">
 <ul>
     <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">Bestemmingen</a></li>
+    <li><a href="index.php">Bestemmingen</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact">Registreer</a></li>
     <li><a href="#contact">Inloggen</a></li>
@@ -64,15 +88,15 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
         while ($row = mysqli_fetch_array($result))
         {
             ?>
-    <div class="col-ad-4">
-        <form method="post" action"index.php?action=ad&id=<?php echo $row["id"]; ?>">
-        <div style="border: 1px solid #eaeaec; margin: -1px 19px 3px -1px; box-shadow: 0 1px 2px rgba(0,0,0,0,05); padding: 10px;" align="center">
-            <img src="<?php echo $row["image"]; ?>" class="img-responsive">
+    <div class="col-ad-3">
+        <form method="post" action="Bestemmingen.php?action=add&id=<?php echo $row["id"]; ?>">
+        <div style="border: 1px solid #eaeaec; margin: -1px 19px 3px -1px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); padding: 10px;" align="center">
+            <img src="../IMG/<?php echo $row["image"]; ?>" class="img-responsive">
             <h5 class="text-info"><?php echo $row ["p_name"]; ?></h5>
             <input type="text" name="quantity" class="form-control" value="1">
             <input type="hidden" name="hidden_name" value="<?php echo $row["p_name"]; ?>">
             <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
-            <input type="submit" name="add" style="margin-top:5px" class="btn btn-default" value="Add to bag">
+            <input type="submit" name="add" style="margin-top:5px;" class="btn btn-default" value="Add to bag">
         </div>
         </form>
     </div>
@@ -81,9 +105,9 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
     }
     ?>
 
-    <div style="clear: both"></div>
+    <div style="clear:both"></div>
     <h2>My shopping bag</h2>
-    <div class="table table-bordered">
+    <div class="table table-responsive">
         <table class="table table-bordered">
             <tr>
                 <th width="40%">Product Name</th>
@@ -102,11 +126,10 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
                         <td><?php echo $values["item_quantity"]; ?></td>
                         <td>$ <?php echo $values["product_price"]; ?></td>
                         <td>$ <?php echo number_format($values["item_quantity"] * $values["product_price"], 2); ?></td>
-                        <td><a href="index.php?action=delete$id=<?php echo $values ["product_id"]; ?>"><span
-                                        class="text-danger"></span></a></td>
+                        <td><a href="Bestemmingen.php?action=delete&id=<?php echo $values["product_id"]; ?>"><span class="text-danger">X</span></a></td>
                     </tr>
                     <?php
-                    $total = $total + ($values["item_quantity"] + $values["product_price"]);
+                    $total = $total + ($values["item_quantity"] * $values["product_price"]);
                 }
                 ?>
                 <tr>
@@ -119,7 +142,17 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
             ?>
         </table>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
 <!--FOOTER-->
 <div class="footer">
