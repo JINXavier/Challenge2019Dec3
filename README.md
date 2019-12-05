@@ -4,7 +4,7 @@ Onze taak verdeling:
 
 Chris
 
-Home, Bestemmingen Contact en opmaak van alle pagina's
+Home, Bestemmingen Contact en opmaak van alle pagina's & Wireframe.
 
 
 
