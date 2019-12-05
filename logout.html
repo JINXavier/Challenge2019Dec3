@@ -1,0 +1,20 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['gebruikersnaam'])){
+    header('location:inlog.html');
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<a href="logout.php">LOGOUT</a>
+
+<h1>Welkom <?php echo $_SESSION['gebruikersnaam']; </h1>
+</body>
+</html>
