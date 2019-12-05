@@ -4,11 +4,11 @@ Onze taak verdeling:
 
 Chris
 
-Home, Bestemmingen Contact en opmaak van alle pagina's & Wireframe.
+Home, Bestemmingen Contact, opmaak van alle pagina's en Wireframe.
 
 
 
 Lesley
 
-Contact, Registreer, Inloggen.
+Contact, Registreren, Inloggen en uitloggen.
 
