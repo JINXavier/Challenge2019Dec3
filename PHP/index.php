@@ -22,7 +22,7 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
         padding: 10px;
     }
     .footer {
-        position: fixed;
+        position: static;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -34,6 +34,12 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
     .banner{
         width: 100%;
         height: 420px;
+    }
+    .bestemmingen{
+        width: 25%;
+        margin: auto;
+        float: left;
+
     }
     /*NAVBAR*/
     ul {
@@ -72,9 +78,9 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
 <!--NAVBAR-->
 <img class="banner" src="../IMG/Banner.png" alt="South Africa">
 <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="index.php">Bestemmingen</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="../Homepage.html">Home</a></li>
+    <li><a class="active" href="PHP/index.php">Bestemmingen</a></li>
+    <li><a href="../Contact.html">Contact</a></li>
     <li><a href="#contact">Registreer</a></li>
     <li><a href="#contact">Inloggen</a></li>
 </ul>
@@ -88,15 +94,16 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
         while ($row = mysqli_fetch_array($result))
         {
             ?>
-    <div class="col-ad-3">
+    <div class ="bestemmingen">
         <form method="post" action="Bestemmingen.php?action=add&id=<?php echo $row["id"]; ?>">
         <div style="border: 1px solid #eaeaec; margin: -1px 19px 3px -1px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); padding: 10px;" align="center">
             <img src="../IMG/<?php echo $row["image"]; ?>" class="img-responsive">
             <h5 class="text-info"><?php echo $row ["p_name"]; ?></h5>
+            <h5 class="text-danger">$ <?php echo $row["price"]; ?></h5>
             <input type="text" name="quantity" class="form-control" value="1">
             <input type="hidden" name="hidden_name" value="<?php echo $row["p_name"]; ?>">
             <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
-            <input type="submit" name="add" style="margin-top:5px;" class="btn btn-default" value="Add to bag">
+            <input type="submit" name="add" style="margin-top:5px;" class="btn btn-default" value="Voeg to aan winkelmandje.">
         </div>
         </form>
     </div>
@@ -106,15 +113,15 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
     ?>
 
     <div style="clear:both"></div>
-    <h2>My shopping bag</h2>
+    <h2>Mijn winkel mandje</h2>
     <div class="table table-responsive">
         <table class="table table-bordered">
             <tr>
-                <th width="40%">Product Name</th>
-                <th width="10%">Quantity</th>
-                <th width="20%">Price Details</th>
-                <th width="15%">Order Total</th>
-                <th width="5%">Action</th>
+                <th width="20%">Stad</th>
+                <th width="10%">Personen</th>
+                <th width="20%">Prijs</th>
+                <th width="15%">Totaal bedrag</th>
+                <th width="5%">Verwijderen</th>
             </tr>
             <?php
             if (!empty($_SESSION["cart"])) {
@@ -142,17 +149,6 @@ $connect = mysqli_connect("localhost", "root", "", "southafrica");
             ?>
         </table>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     </div>
 <!--FOOTER-->
 <div class="footer">

@@ -10,7 +10,7 @@ margin: 0px;
 }
 
 .footer {
-    position: fixed;
+    position: static;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -53,4 +53,9 @@ li a:hover {
 
 .active {
     background-color: #4CAF50;
+}
+
+.pictures{
+    float: left;
+    text-align="center"
 }
